@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Client Application - Task APP</title>
+        <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+
+         <div class="mt-4 p-5 bg-dark text-white rounded">
+            <h1>Todo Tasks Repository</h1>
+            <p>store your task details here</p>
+          </div>
+          <button type="button" style="margin:10px" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+             Add New Task
+          </button>
+          <div id="container">
+
+          </div>
+
+          <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Add New Task</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="mb-3 mt-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea class="form-control" id="description" placeholder="Description" name="description">
+                        </textarea>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="completiondate" class="form-label">Completion Date:</label>
+                        <input type="text" class="form-control" id="completiondate" placeholder="Completion Date" name="completiondate">
+                   </div>
+                   <hr/>
+                   <div class="mb-3 mt-3">
+                   <form id="form1" enctype="multipart/form-data" method="post">
+                    <label for="image" class="form-label">Upload Image:</label>
+                    <input type="file" class="form-control" id="myfile" placeholder="Upload Image" name="myfile">
+                    <button type="submit" id="btn1"></button> 
+                  </form>
+                </div>
+
+                  <hr/>
+                   <div class="mb-3 mt-3">
+                    <form id="form2"  enctype="multipart/form-data" method="post">
+                    <label for="doc" class="form-label">Upload Document:</label>
+                    <input type="file" class="form-control" id="myfile" placeholder="Upload Image" name="myfile">
+                    <button type="submit" id="btn2"></button>  
+                  </form>
+                </div>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" id="full" class="btn btn-danger" data-bs-dismiss="modal">Add Task</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+    </body>
+</html>
