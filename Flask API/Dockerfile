@@ -1,8 +1,15 @@
-FROM python:latest
-WORKDIR /flask-first-app-master
-ADD . /flask-first-app-master
-RUN pip3 install -r requirements.txt
-ENV ACCESS_KEY=AKIAQY4BAQBOCI6BDHHV
-ENV SECRET_KEY=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
-EXPOSE 8081
-CMD ["python","app.py"]
+FROM python
+
+WORKDIR /app
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./requirements.txt .
+ENV ACCESS_KEY=XXXXXXX
+ENV SECRET_KEY=YYYYYYY
+#this runs when image is built
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 5000
+
+ENTRYPOINT [ "python" ,"app.py" ]
